@@ -16,8 +16,13 @@
     background-color: dodgerblue;
     height:80px;
 }
-#Selection_count,#Back_button {
+#Selection_count {
     text-align: center;
+    padding-top: 15px;
+    font-size: xx-large;
+    color: white;
+}
+#Back_button{
     padding-top: 15px;
     font-size: xx-large;
     color: white;
@@ -56,4 +61,17 @@
 }
 #quality, #Quality_desc{
     margin-left: 10px;
+}
+.Qual {
+    font-size: large;
+    background-color: royalblue;
+    padding: 10px;
+    border: lightsteelblue;
+    border-width: 5px;
+    border-style: solid;
+}
+#BackButton {
+    height: 80px;
+    width: 100px;
+    font-size: xx-large;
 }
