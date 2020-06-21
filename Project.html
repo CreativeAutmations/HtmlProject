@@ -10,47 +10,46 @@
     <div class="container">
         <div class="header">
             <div class="row">
-                <div class="col-sm-12">
-                    <div class="Selection_count">First Row</div>
-                </div>
+                <div class="col-sm-12" id="Selection_count">0</div>
             </div>
         </div>
         <div class="main">
             <div class="row">
                 <div class="col-sm-4">
                     <div class="row">
-                            <div class="col-sm-12 quality">Cell-R2.C1.R1</div>
+                            <div class="col-sm-12" id="quality">Accuracy</div>
                     </div> 
                     <div class="row">
-                        <div class="col-sm-12 Quality_desc">Cell-R2.C1.R2</div>
+                        <div class="col-sm-12" id="Quality_desc">the quality or state of being correct or precise.<br>"we have confidence in the accuracy of the statistics"</div>
                     </div>
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="row">
-                                <div class="col-sm-6 No_button">
-                                    <button type="button" class="btn btn-primary">
-                                        <div class="No_button">Cell-R2.C1.R3.C1</div>
+                                <div class="col-sm-6">
+                                    <button type="button" class="btn btn-primary" id="NoButton">
+                                        <div class="No_button">&#10060;</div>
                                     </button>
                                 </div>
                                 <div class="col-sm-6">
-                                    <button type="button" class="btn btn-primary">
-                                        <div class="Yes_button">Cell-R2.C1.R3.C2</div>
+                                    <button type="button" class="btn btn-primary" id="YesButton">
+                                        <div class="Yes_button">&#x2713;</div>
                                     </button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-8 Second_Row">Second Row</div>
+                <div class="col-sm-8" id="Second_Row"></div>
             </div>
         </div>
         <div class="footer">
             <div class="row">
-                <div class="col-sm-12">
-                    <div class="Back_button">Third Row</div>
-                </div>
+                <div class="col-sm-12" id="Back_button"></div>
             </div>
         </div>
     </div>
+    <script src="js/jquery-3.5.1.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/Projectjs.js"></script>
 </body>
 </html>
