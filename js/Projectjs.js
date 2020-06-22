@@ -178,18 +178,53 @@ $(document).ready(function(){
             else
             break;
         }    
-        $("#Second_Row").append("<label class='Qual'>"+file_source[current][0]+"</label>")
-        file_source[current][2]='Yes';
         $("#quality").text(file_source[next][0])
         $("#Quality_desc").text(file_source[next][1])
-        current=next;
         if(next==29)
-        alert("Sorry, No More Qualities present now");    
+        {
+            alert("Sorry, No More Qualities present now"); 
+            current=next;
+        }   
         else
-        next++;
-        var x = document.getElementById("Selection_count").textContent;
-        count=parseInt(x);
-        count++;
-        document.getElementById("Selection_count").textContent=count+"";
+        {
+            $("#Second_Row").append("<button type='button' class='Qual' id='qual_"+current+"' onclick='labelfunc("+current+")'>"+file_source[current][0]+"</button>")
+            file_source[current][2]='Yes';
+            current=next;
+            next++;
+            var x = document.getElementById("Selection_count").textContent;
+            count=parseInt(x);
+            count++;
+            document.getElementById("Selection_count").textContent=count+"";
+        }
     });
 });
+$(document).ready(function(){
+    $("#BackButton").click(function(){
+        next=current-1;
+        for (i=next;i>=0; i--) 
+        {
+            if(file_source[i][2]=='Yes')
+            next--;
+            else
+            break;
+        }
+        if(next==-1)
+        {
+        alert("Sorry, No More Qualities present now");
+        next=current+1;
+        }
+        else
+        {
+            $("#quality").text(file_source[next][0])
+            $("#Quality_desc").text(file_source[next][1])
+            current=next;
+            next=current+1;
+        }
+    });
+});
+function labelfunc(num)
+{
+    var element = document.getElementById('qual_'+num);
+    element.parentNode.removeChild(element);
+    file_source[num][2]='No';
+}
