@@ -207,40 +207,47 @@ $(document).ready(function(){
 });
 $(document).ready(function(){
     $("#YesButton").click(function(){
-        for(i=next;i<(file_source.length-1);i++)
+        if (Sub==2 && count==24)
+        alert("You can't select more than 24 qualities");
+        else if (Sub==3 && count==6)
+        alert("You can't select more than 6 qualities");
+        else
         {
-            if(file_source[i][3]==(Sub+''))
+            for(i=next;i<(file_source.length-1);i++)
             {
-                if(file_source[i][2]=="1")
-                next++;
+                if(file_source[i][3]==(Sub+''))
+                {
+                    if(file_source[i][2]=="1")
+                    next++;
+                    else
+                    break;
+                }
                 else
-                break;
-            }
+                next++;
+            }    
+            $("#quality").text(file_source[next][0])
+            $("#Quality_desc").text(file_source[next][1])
+            if(next==(file_source.length-1))
+            {
+                if(current!=next)
+                {
+                    $("#Second_Row").append("<button type='button' class='Qual' id='qual_"+current+"' onclick='labelfunc("+current+")'>"+file_source[current][0]+"</button>")
+                    file_source[current][2]='1';
+                    count++;
+                    document.getElementById("Selection_count").textContent=count+"";
+                }
+                alert("Sorry, No More Qualities present now"); 
+                current=next;
+            }   
             else
-            next++;
-        }    
-        $("#quality").text(file_source[next][0])
-        $("#Quality_desc").text(file_source[next][1])
-        if(next==(file_source.length-1))
-        {
-            if(current!=next)
             {
                 $("#Second_Row").append("<button type='button' class='Qual' id='qual_"+current+"' onclick='labelfunc("+current+")'>"+file_source[current][0]+"</button>")
                 file_source[current][2]='1';
+                current=next;
+                next++;
                 count++;
                 document.getElementById("Selection_count").textContent=count+"";
             }
-            alert("Sorry, No More Qualities present now"); 
-            current=next;
-        }   
-        else
-        {
-            $("#Second_Row").append("<button type='button' class='Qual' id='qual_"+current+"' onclick='labelfunc("+current+")'>"+file_source[current][0]+"</button>")
-            file_source[current][2]='1';
-            current=next;
-            next++;
-            count++;
-            document.getElementById("Selection_count").textContent=count+"";
         }
     });
 });
@@ -378,7 +385,7 @@ $(document).ready(function(){
                 next++;
             }
             else
-            alert("PLease select exact 24 qualities");
+            alert("PLease select exact 6 qualities");
         }
         else if(Sub==3)
         {
