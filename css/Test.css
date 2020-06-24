@@ -1,0 +1,22 @@
+#Selection_count {
+    background-color: dodgerblue;
+    text-align: center;
+    color: white;
+}
+#quality {
+    background-color: black;
+    color:white;
+    text-align: center;
+}
+#Quality_desc{
+    background-color: grey;
+    color:white;
+    text-align: center;
+}
+#Second_Row{
+    background-color: #33DAFF;
+    color:white;
+}
+.footer{
+    background-color: dodgerblue;
+}
