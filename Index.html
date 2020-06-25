@@ -4,49 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/Test.css">
+    <link rel="stylesheet" href="css/ProjectStyle.css">
     <title>Project</title>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1><div class="row">
+            <h3><div class="row">
                 <div class="col-sm" id="Selection_count">0</div>
-            </div></h1>
+            </div></h3>
         </div>
-        <div class="main">
+        <div class="main" id='selectquality'>
             <div class="row">
                 <div class="col-sm-4">
                     <h1><div class="row">
                         <div class="col-sm" id="quality">Accuracy</div>
                     </div></h1> 
                     <h4><div class="row" id="Quality_desc">the quality or state of being correct or precise. Eg-"we have confidence in the accuracy of the statistics"</div></h4>
-                    <div class="row">
-                        <div class="row">
+                    <div class="row buttonrow">
+                        <div class="col-sm">
                             <button type="button" class="btn btn-danger" id="NoButton">
-                                <h1><div class="No_button">&#10060;</div></h1>
+                                <h1>&#10060;</h1>
                             </button>
+                        </div>
+                        <div class="col-sm">
                             <button type="button" class="btn btn-success" id="YesButton">
-                                <h1><div class="Yes_button">&#x2713;</div></h1>
+                                <h1>&#x2713;</h1>
+                            </button>
+                        </div>
+                        <div class="col-sm">
+                            <button type="button" class="btn btn-primary" id="BackButton">
+                                <h1>&#8617;</h1>
                             </button>
                         </div>
                     </div>
-               </div>
+                </div>
                 <div class="col-sm-8" id="Second_Row"></div>
             </div>
         </div>
+        <div class="ordering" id="orderit">
+            <ul id="sortable_quality"></ul>
+        </div>
         <div class="footer">
             <div class="row">
-                <button type="button" class="btn btn-primary" id="BackButton">
-                    <h1><div class="Back_button">&#8617;</div></h1>
-                </button>
-                <button type="button" class="btn btn-warning" id="Sub">
-                    <h1><div class="Submit_button">Submit</div></h1>
-                </button>
+                <div class="col-sm">
+                    <button type="button" class="btn btn-warning" id="Sub">
+                        <h1><div class="Submit_button">Submit</div></h1>
+                    </button>
+                </div>
             </div>
         </div>
     </div>
     <script src="js/jquery-3.5.1.js"></script>
+    <script src = "https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/Projectjs.js"></script>
 </body>

@@ -23,6 +23,7 @@
     background-color: #33DAFF;
     color:white;
     padding: 15px;
+    height: 380 px;
 }
 #NoButton,#YesButton,#BackButton,#Sub {
     width: 100%;

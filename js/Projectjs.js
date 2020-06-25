@@ -385,24 +385,21 @@ $(document).ready(function(){
                 next++;
             }
             else
-            alert("PLease select exact 6 qualities");
+            alert("PLease select exact 24 qualities");
         }
         else if(Sub==3)
         {
             if(count==6)
             {
-                alert("Your qualites are submitted");
-                count=0;
+                alert("Your qualites are submitted. Now order the top 6 qualites");
                 Sub++;
-                document.getElementById("Selection_count").textContent=count+"";
+                document.getElementById("Selection_count").textContent="Order top 6 qualites by giving top most quality the highest priority";
                 for(i=0;i<(file_source.length-1);i++)
                 {
                     if(file_source[i][2]=='1')
                     {
                         file_source[i][3]='4';
                         file_source[i][2]='0';
-                        element = document.getElementById('qual_'+i);
-                        element.parentNode.removeChild(element);
                     }
                 }
                 for(i=0;i<(file_source.length-1);i++)
@@ -413,13 +410,27 @@ $(document).ready(function(){
                         break;
                     }
                 }
-                $("#quality").text(file_source[next][0])
-                $("#Quality_desc").text(file_source[next][1])
-                current=next;
-                next++;
+                var x = document.getElementById("selectquality");
+                x.style.display = "none";
+                var n = document.getElementById("orderit");
+                n.style.display = "block";
+                var x = document.createElement("UL");
+                for(i=0;i<(file_source.length-1);i++)
+                {
+                    if(file_source[i][3]=='4')
+                    {
+                        var y = document.createElement("LI");
+                        var t = document.createTextNode(file_source[i][0]);
+                        y.appendChild(t);
+                        document.getElementById("sortable_quality").appendChild(y);
+                    }
+                }
             }
             else
-            alert("PLease select exact 24 qualities");
+            alert("PLease select exact 6 qualities");
         }
     });
 });
+$(function() {
+    $( "#sortable_quality" ).sortable();
+ });
