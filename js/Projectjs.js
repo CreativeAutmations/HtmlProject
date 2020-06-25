@@ -429,6 +429,10 @@ $(document).ready(function(){
             else
             alert("PLease select exact 6 qualities");
         }
+        else
+        {
+            alert("It is in the maintainence at the moment");
+        }
     });
 });
 $(function() {
