@@ -1,23 +1,75 @@
-#Selection_count {
+.header {
     background-color: dodgerblue;
-    text-align: center;
-    color: white;
+    height:80px;
 }
-#quality {
-    background-color: black;
-    color:white;
-    text-align: center;
-}
-#Quality_desc{
-    background-color: grey;
-    height:220px;
-    color:white;
-    text-align: center;
-}
-#Second_Row{
-    background-color: #33DAFF;
-    color:white;
+.main {
+    height:420px;
 }
 .footer{
     background-color: dodgerblue;
+    height:80px;
+}
+#Selection_count {
+    text-align: center;
+    padding-top: 15px;
+    font-size: xx-large;
+    color: white;
+}
+#Back_button{
+    padding-top: 15px;
+    font-size: xx-large;
+    color: white;
+}
+#quality, #Quality_desc, #Second_Row{
+    border-style: solid;
+    border-width: 3px;
+    border-color: white;
+}
+#quality {
+    height:100px;
+    background-color: black;
+    color:white;
+    text-align: center;
+    font-size: xx-large;
+    padding-top: 20px;
+}
+.No_button, .Yes_button {
+    height:90px;
+    width: 150px;
+    font-size: xx-large;
+    padding-top: 15px;
+}
+#Quality_desc{
+    height:220px;
+    background-color: grey;
+    color:white;
+    text-align: center;
+    font-size: x-large;
+    padding-top: 20px;
+}
+#Second_Row{
+    height:420px;
+    background-color: lightsteelblue;
+    color:white;
+}
+#quality, #Quality_desc{
+    margin-left: 10px;
+}
+.Qual {
+    font-size: large;
+    background-color: royalblue;
+    padding: 10px;
+    border: lightsteelblue;
+    border-width: 5px;
+    border-style: solid;
+}
+#BackButton {
+    height: 80px;
+    width: 100px;
+    font-size: xx-large;
+}
+#Sub {
+    height: 80px;
+    width: 120px;
+    font-size: x-large;
 }

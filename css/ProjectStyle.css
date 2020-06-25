@@ -1,75 +1,49 @@
-.header {
-    background-color: dodgerblue;
-    height:80px;
-}
-.main {
-    height:420px;
-}
-.footer{
-    background-color: dodgerblue;
-    height:80px;
-}
 #Selection_count {
+    background-color: dodgerblue;
     text-align: center;
-    padding-top: 15px;
-    font-size: xx-large;
     color: white;
-}
-#Back_button{
     padding-top: 15px;
-    font-size: xx-large;
-    color: white;
-}
-#quality, #Quality_desc, #Second_Row{
-    border-style: solid;
-    border-width: 3px;
-    border-color: white;
+    height: 80px;
 }
 #quality {
-    height:100px;
     background-color: black;
     color:white;
     text-align: center;
-    font-size: xx-large;
-    padding-top: 20px;
-}
-.No_button, .Yes_button {
-    height:90px;
-    width: 150px;
-    font-size: xx-large;
+    height: 80px;
     padding-top: 15px;
 }
 #Quality_desc{
-    height:220px;
     background-color: grey;
+    height:220px;
     color:white;
     text-align: center;
-    font-size: x-large;
-    padding-top: 20px;
+    padding-top: 15px;
 }
 #Second_Row{
-    height:420px;
-    background-color: lightsteelblue;
+    background-color: #33DAFF;
     color:white;
+    padding: 15px;
 }
-#quality, #Quality_desc{
-    margin-left: 10px;
+#NoButton,#YesButton,#BackButton,#Sub {
+    width: 100%;
 }
-.Qual {
-    font-size: large;
-    background-color: royalblue;
-    padding: 10px;
-    border: lightsteelblue;
-    border-width: 5px;
-    border-style: solid;
+#orderit {
+    display: none;
 }
-#BackButton {
-    height: 80px;
-    width: 100px;
-    font-size: xx-large;
+#sortable_quality {
+    list-style-type: none;
+    margin: 0; 
+    padding: 0;
+    width: 25%; 
+    display: inline;
 }
-#Sub {
-    height: 80px;
-    width: 120px;
-    font-size: x-large;
+#sortable_quality li {
+    text-align: center;
+    height: 30px;
+    background: #cedc98;
+    border: 1px solid #DDDDDD;
+    color: #333333;
+}
+#orderit {
+    height: 200px;
 }
