@@ -28,7 +28,7 @@
 #NoButton,#YesButton,#BackButton,#Sub {
     width: 100%;
 }
-#orderit {
+#orderit, #FinalTable {
     display: none;
 }
 #sortable_quality {

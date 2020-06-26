@@ -402,14 +402,6 @@ $(document).ready(function(){
                         file_source[i][2]='0';
                     }
                 }
-                for(i=0;i<(file_source.length-1);i++)
-                {
-                    if(file_source[i][3]==(Sub+''))
-                    {
-                        next=i;
-                        break;
-                    }
-                }
                 var x = document.getElementById("selectquality");
                 x.style.display = "none";
                 var n = document.getElementById("orderit");
@@ -419,15 +411,26 @@ $(document).ready(function(){
                 {
                     if(file_source[i][3]=='4')
                     {
-                        var y = document.createElement("LI");
-                        var t = document.createTextNode(file_source[i][0]);
-                        y.appendChild(t);
-                        document.getElementById("sortable_quality").appendChild(y);
+                        $("#sortable_quality").append('<li id="'+i+'">'+file_source[i][0]+'</li>');
                     }
                 }
             }
             else
             alert("PLease select exact 6 qualities");
+        }
+        else if(Sub==4)
+        {
+            alert("Congratulations, your qualities are submitted");
+            document.getElementById("Selection_count").textContent="Your top qualities are shown below";
+            var x = document.getElementById("orderit");
+            x.style.display = "none";
+            var m = document.getElementById("FinalTable");
+            m.style.display = "block";
+            var n = document.getElementById("subm");
+            n.style.display = "none";
+            var idsInOrder = $("#sortable_quality").sortable("toArray");
+            for(i=0;i<6;i++)
+            $("#addquality").append('<tr><th>'+file_source[idsInOrder[i]][0]+'</th><th>'+file_source[idsInOrder[i]][1]+'</th></tr>');
         }
         else
         {
