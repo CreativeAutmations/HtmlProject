@@ -1,14 +1,12 @@
 var next=1,count=0,i,current=0,Sub=1;
 var element;
-$("#quality").text(file_source[0][0]);
-$("#Quality_desc").text(file_source[0][1]);
 $(document).ready(function(){
     $("#NoButton").click(function(){
         for(i=next;i<(file_source.length-1);i++)
         {
-            if(file_source[i][3]==(Sub+''))
+            if(file_source[i].Level==(Sub+''))
             {
-                if(file_source[i][2]=="1")
+                if(file_source[i].Status=="1")
                 next++;
                 else
                 break;
@@ -16,8 +14,8 @@ $(document).ready(function(){
             else
             next++;
         }
-        $("#quality").text(file_source[next][0])
-        $("#Quality_desc").text(file_source[next][1])
+        $("#quality").text(file_source[next].Quality)
+        $("#Quality_desc").text(file_source[next].Meaning)
         current=next;
         if(next==(file_source.length-1))
         alert("Sorry, No More Qualities present now");    
@@ -35,9 +33,9 @@ $(document).ready(function(){
         {
             for(i=next;i<(file_source.length-1);i++)
             {
-                if(file_source[i][3]==(Sub+''))
+                if(file_source[i].Level==(Sub+''))
                 {
-                    if(file_source[i][2]=="1")
+                    if(file_source[i].Status=="1")
                     next++;
                     else
                     break;
@@ -45,13 +43,13 @@ $(document).ready(function(){
                 else
                 next++;
             }    
-            $("#quality").text(file_source[next][0])
-            $("#Quality_desc").text(file_source[next][1])
+            $("#quality").text(file_source[next].Quality)
+            $("#Quality_desc").text(file_source[next].Meaning)
             if(next==(file_source.length-1))
             {
                 if(current!=next)
                 {
-                    $("#Second_Row").append("<button type='button' class='Qual' id='qual_"+current+"' onclick='labelfunc("+current+")'>"+file_source[current][0]+"</button>")
+                    $("#Second_Row").append("<button type='button' class='Qual' id='qual_"+current+"' onclick='labelfunc("+current+")'>"+file_source[current].Quality+"</button>")
                     file_source[current][2]='1';
                     count++;
                     document.getElementById("Selection_count").textContent=count+"";
@@ -61,8 +59,8 @@ $(document).ready(function(){
             }   
             else
             {
-                $("#Second_Row").append("<button type='button' class='Qual' id='qual_"+current+"' onclick='labelfunc("+current+")'>"+file_source[current][0]+"</button>")
-                file_source[current][2]='1';
+                $("#Second_Row").append("<button type='button' class='Qual' id='qual_"+current+"' onclick='labelfunc("+current+")'>"+file_source[current].Quality+"</button>")
+                file_source[current].Status='1';
                 current=next;
                 next++;
                 count++;
@@ -76,9 +74,9 @@ $(document).ready(function(){
         next=current-1;
         for (i=next;i>=0; i--) 
         {
-            if(file_source[i][3]==(Sub+''))
+            if(file_source[i].Level==(Sub+''))
             {
-                if(file_source[i][2]=='1')
+                if(file_source[i].Status=='1')
                 next--;
                 else
                 break;
@@ -93,8 +91,8 @@ $(document).ready(function(){
         }
         else
         {
-            $("#quality").text(file_source[next][0])
-            $("#Quality_desc").text(file_source[next][1])
+            $("#quality").text(file_source[next].Quality)
+            $("#Quality_desc").text(file_source[next].Meaning)
             current=next;
             next=current+1;
         }
@@ -104,7 +102,7 @@ function labelfunc(num)
 {
     element = document.getElementById('qual_'+num);
     element.parentNode.removeChild(element);
-    file_source[num][2]='0';
+    file_source[num].Status='0';
     count--;
     document.getElementById("Selection_count").textContent=count+"";
 }
@@ -122,24 +120,24 @@ $(document).ready(function(){
                 document.getElementById("Selection_count").textContent=count+"";
                 for(i=0;i<(file_source.length-1);i++)
                 {
-                    if(file_source[i][2]=='1')
+                    if(file_source[i].Status=='1')
                     {
-                        file_source[i][3]='3';
-                        file_source[i][2]='0';
+                        file_source[i].Level='3';
+                        file_source[i].Status='0';
                         element = document.getElementById('qual_'+i);
                         element.parentNode.removeChild(element);
                     }
                 }
                 for(i=0;i<(file_source.length-1);i++)
                 {
-                    if(file_source[i][3]==(Sub+''))
+                    if(file_source[i].Level==(Sub+''))
                     {
                         next=i;
                         break;
                     }
                 }
-                $("#quality").text(file_source[next][0])
-                $("#Quality_desc").text(file_source[next][1])
+                $("#quality").text(file_source[next].Quality)
+                $("#Quality_desc").text(file_source[next].Meaning)
                 current=next;
                 next++;
             }
@@ -151,24 +149,24 @@ $(document).ready(function(){
                 document.getElementById("Selection_count").textContent=count+"";
                 for(i=0;i<(file_source.length-1);i++)
                 {
-                    if(file_source[i][2]=='1')
+                    if(file_source[i].Status=='1')
                     {
-                        file_source[i][3]='2';
-                        file_source[i][2]='0';
+                        file_source[i].Level='2';
+                        file_source[i].Status='0';
                         element = document.getElementById('qual_'+i);
                         element.parentNode.removeChild(element);
                     }
                 }
                 for(i=0;i<(file_source.length-1);i++)
                 {
-                    if(file_source[i][3]==(Sub+''))
+                    if(file_source[i].Level==(Sub+''))
                     {
                         next=i;
                         break;
                     }
                 }
-                $("#quality").text(file_source[next][0])
-                $("#Quality_desc").text(file_source[next][1])
+                $("#quality").text(file_source[next].Quality)
+                $("#Quality_desc").text(file_source[next].Meaning)
                 current=next;
                 next++;
             }
@@ -183,24 +181,24 @@ $(document).ready(function(){
                 document.getElementById("Selection_count").textContent=count+"";
                 for(i=0;i<(file_source.length-1);i++)
                 {
-                    if(file_source[i][2]=='1')
+                    if(file_source[i].Status=='1')
                     {
-                        file_source[i][3]='3';
-                        file_source[i][2]='0';
+                        file_source[i].Level='3';
+                        file_source[i].Status='0';
                         element = document.getElementById('qual_'+i);
                         element.parentNode.removeChild(element);
                     }
                 }
                 for(i=0;i<(file_source.length-1);i++)
                 {
-                    if(file_source[i][3]==(Sub+''))
+                    if(file_source[i].Level==(Sub+''))
                     {
                         next=i;
                         break;
                     }
                 }
-                $("#quality").text(file_source[next][0])
-                $("#Quality_desc").text(file_source[next][1])
+                $("#quality").text(file_source[next].Quality)
+                $("#Quality_desc").text(file_source[next].Meaning)
                 current=next;
                 next++;
             }
@@ -216,10 +214,10 @@ $(document).ready(function(){
                 document.getElementById("Selection_count").textContent="Order top 6 qualites by giving top most quality the highest priority";
                 for(i=0;i<(file_source.length-1);i++)
                 {
-                    if(file_source[i][2]=='1')
+                    if(file_source[i].Status=='1')
                     {
-                        file_source[i][3]='4';
-                        file_source[i][2]='0';
+                        file_source[i].Level='4';
+                        file_source[i].Status='0';
                     }
                 }
                 var x = document.getElementById("selectquality");
@@ -229,9 +227,9 @@ $(document).ready(function(){
                 var x = document.createElement("UL");
                 for(i=0;i<(file_source.length-1);i++)
                 {
-                    if(file_source[i][3]=='4')
+                    if(file_source[i].Level=='4')
                     {
-                        $("#sortable_quality").append('<li id="'+i+'">'+file_source[i][0]+'</li>');
+                        $("#sortable_quality").append('<li id="'+i+'">'+file_source[i].Quality+'</li>');
                     }
                 }
             }
@@ -250,7 +248,7 @@ $(document).ready(function(){
             n.style.display = "none";
             var idsInOrder = $("#sortable_quality").sortable("toArray");
             for(i=0;i<6;i++)
-            $("#addquality").append('<tr><th>'+file_source[idsInOrder[i]][0]+'</th><th>'+file_source[idsInOrder[i]][1]+'</th></tr>');
+            $("#addquality").append('<tr><th>'+file_source[idsInOrder[i]].Quality+'</th><th>'+file_source[idsInOrder[i]].Meaning+'</th></tr>');
         }
         else
         {
